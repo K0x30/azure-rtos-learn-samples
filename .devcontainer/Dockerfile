@@ -43,7 +43,7 @@ RUN apt update \
 RUN git clone https://github.com/Microsoft/vcpkg ${VCPKG_ROOT} \
     && cd ${VCPKG_ROOT} \
     && ./bootstrap-vcpkg.sh \
-    && mkdir /root/.vcpkg \
+    && mkdir -p /root/.vcpkg \
     && touch /root/.vcpkg/vcpkg.path.txt
 
 ENV PATH "${VCPKG_ROOT}:${PATH}"
